@@ -24,8 +24,8 @@ while not crashed:
             if pygame.key.get_pressed()[K_ESCAPE]:
                 crashed = True
     screen.fill(bkgd)
-    heading.display()
     attitude.display()
+    heading.display()
     pygame.display.update()
     clock.tick(60)
 

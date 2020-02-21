@@ -23,7 +23,6 @@ class Instrument():
         img = self.get_rimg()
         x = int(self.x-(img.get_width())/2)
         y = int(self.y-(img.get_height())/2)
-        pygame.draw.rect(self.screen,(33,28,10),(x-50,y-50,self.width+100,self.height+100))
         self.screen.blit(img,(x,y))
         self.screen.blit(self.statimg,(self.x-self.statimg.get_width()/2,self.y-self.statimg.get_height()/2))
 
@@ -35,4 +34,10 @@ class Horizon(Instrument):
 
     def display(self):
         super(Horizon,self).display()
+        x = int(self.x-self.statimg.get_width()/2)
+        y = int(self.y-self.statimg.get_height()/2)
         self.screen.blit(self.border,(self.x-self.border.get_width()/2,self.y-self.border.get_height()/2))
+        pygame.draw.rect(self.screen,(198,149,63),(x-500,y-500,self.statimg.get_width()+500,500))
+        pygame.draw.rect(self.screen,(198,149,63),(x+self.statimg.get_width(),y-500,500,self.statimg.get_height()+500))
+        pygame.draw.rect(self.screen,(198,149,63),(x,y+self.statimg.get_height(),self.statimg.get_width()+500,500))
+        pygame.draw.rect(self.screen,(198,149,63),(x-500,y,500,self.statimg.get_height()+500))
