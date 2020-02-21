@@ -12,9 +12,9 @@ clock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
-heading = classes.Instrument(screen,500,500,10,config.headingStatic,config.headingMove)
+heading = classes.Instrument(screen,1500,1000,10,config.headingStatic,config.headingMove)
 
-attitude = classes.Horizon(screen,1200,500,0,0,config.attitudeStatic,config.attitudeMove,config.attitudeBorder)
+attitude = classes.Horizon(screen,2500,1000,0,0,config.attitudeStatic,config.attitudeMove,config.attitudeBorder)
 
 while not crashed:
     for event in pygame.event.get():
