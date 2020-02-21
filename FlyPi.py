@@ -12,7 +12,9 @@ clock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
-heading = classes.Instrument(screen,100,100,0,config.headingMove)
+heading = classes.Instrument(screen,500,500,10,config.headingStatic,config.headingMove)
+
+attitude = classes.Horizon(screen,1200,500,0,0,config.attitudeStatic,config.attitudeMove,config.attitudeBorder)
 
 while not crashed:
     for event in pygame.event.get():
@@ -23,6 +25,7 @@ while not crashed:
                 crashed = True
     screen.fill(bkgd)
     heading.display()
+    attitude.display()
     pygame.display.update()
     clock.tick(60)
 
